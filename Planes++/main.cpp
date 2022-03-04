@@ -1,6 +1,7 @@
 //Include
 #include <ctime>
 #include <iostream>
+#include <conio.h>
 #include "plane.h"
 
 //Main
@@ -15,13 +16,26 @@ int main() {
 	Renderer rm;
 	PlaneList pl;
 	Sprite s;
-	s.createFromCharData(pl.pList[1].spriteData, COLOR_RED, COLOR_GREEN, COLOR_BLUE);
-	rm.cls();
-	rm.render(s);
-	rm.swapBuffer();
+	int idx = 0;
+
+	//Loop
+	while (true) {
+
+		//Create and draw sprite
+		s.createFromCharData(pl.pList[idx].spriteData, COLOR_RED, COLOR_GREEN, COLOR_BLUE);
+		rm.cls();
+		rm.render(s);
+		rm.swapBuffer();
+
+		//Get input to swap
+		int asciiVal = _getch();
+		if (asciiVal == 97 || asciiVal == 65) { --idx; }       //A
+		else if (asciiVal == 100 || asciiVal == 68) { ++idx; } //D
+		idx = (idx + pl.pList.size()) % pl.pList.size();
+
+	}
 
 	//End
-	system("pause >nul");
 	return 0;
 
 }
