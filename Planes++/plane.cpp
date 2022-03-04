@@ -13,5 +13,6 @@ Plane::Plane(std::string filename) {
 		}
 		file.close();
 	}
+	else { MessageBox(NULL, ("File \"" + filename + "\" couldn't be opened!").c_str(), "File Error", MB_OK); }
 }
 Plane::~Plane() {}
