@@ -33,18 +33,13 @@ class Sprite {
 public:
 	Sprite(int = 1, int = 1);
 	~Sprite();
-	void clear(char c);
-	void resize(int sx, int sy);
-	void setCol(eColor col);
 	void createFromFile(std::string filename);
 	void createFromCharData(std::vector<std::vector<char>> cd, eColor c1, eColor c2, eColor c3);
 	void createFromString(std::string s, bool = false);
-	char symbol;
-	int size;
-	COORD spriteSize;
-	COORD aniPos;
-	COORD pos;
-	CHAR_INFO * buffer;
+	void clear(char c);
+	void setCol(eColor col);
+	int width, height;
+	std::vector<CHAR_INFO> buffer;
 };
 
 //Color class

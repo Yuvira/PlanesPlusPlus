@@ -11,10 +11,8 @@ public:
 	Renderer();
 	~Renderer();
 	void swapBuffer();
-	void render(Sprite s);
 	void render(Sprite s, int x, int y);
 	void cls();
-	void setSize(COORD size);
 private:
 	HANDLE frameBuffer[2];
 	bool currentBuffer;

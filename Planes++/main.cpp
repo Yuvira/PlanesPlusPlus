@@ -24,7 +24,7 @@ int main() {
 		//Create and draw sprite
 		s.createFromCharData(pl.pList[idx].spriteData, COLOR_RED, COLOR_GREEN, COLOR_BLUE);
 		rm.cls();
-		rm.render(s);
+		rm.render(s, 0, 0);
 		rm.swapBuffer();
 
 		//Get input to swap
